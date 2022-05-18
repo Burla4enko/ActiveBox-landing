@@ -99,7 +99,8 @@ p {
     padding-top: 100px;
 
     background-color: #31344f;
-    background: url(../img/intro-bg.jpg) no-repeat center / cover;
+    background: url(../img/intro-bg.jpg) no-repeat center;
+    background-size: cover;
 }
 
 .intro__inner {
@@ -178,7 +179,7 @@ p {
 
 .features__item {
     display: block;
-    max-width: calc(100% / 3);
+    width: calc(100% / 3);
     height: auto;
     margin-top: 25px;
     margin-bottom: 25px;
@@ -227,6 +228,8 @@ p {
 }
 
 .works__photo {
+    min-width: 100%;
+
     position: absolute;
     top: 50%;
     left: 50%;
@@ -409,7 +412,7 @@ p {
     position: relative;
 }
 
-.reviews__img {
+.reviews__img {    
     position: absolute;
     top: 50%;
     right: 0;
@@ -533,5 +536,223 @@ p {
     color: #fff;
 }
 
-/*  font-family: 'Open Sans', sans-serif;
-    font-family: 'Cardo', serif; */
+
+/* BURGER
+========================================== */
+.burger {
+    display: none;
+    margin-right: 20px;
+    padding: 9px 2px;
+
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
+
+.burger__item {
+    display: block;
+    position: relative;
+    width: 28px;
+    height: 3px;
+
+    background-color: #fff;
+
+    font-size: 0;
+    color: transparent;
+}
+
+.burger__item::after,
+.burger__item::before {
+    content: "";
+    display: block;
+    height: 100%;
+
+    background-color: #fff;
+
+    position: absolute;
+    right: 0;
+}
+
+.burger__item::before {
+    width: 30px;
+
+    top: -10px;
+}
+
+.burger__item::after {
+    width: 26px;
+    bottom: -10px;
+}
+
+
+/* MEDIA
+========================================== */
+@media (max-width: 1200px) {
+
+    /* Works */
+    .works__item {
+        width: 50%;
+    }
+}
+
+
+@media (max-width: 991px) {
+
+    /* Nav */
+    .nav {
+        display: none;
+    }
+
+    /* Burger */
+    .burger {
+        display: block;
+    }
+    
+    /* Intro */
+    .intro {
+        height: 600px;
+    }
+
+    .intro__title {
+        font-size: 40px;
+    }
+    
+    /* Features */
+    .features__item {
+        width: 50%;
+    }
+
+    /* Team */
+    .team__item {
+        width: 50%;
+        text-align: center;
+    }
+
+    .team__photo {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Social */
+    .social {
+        justify-content: center;
+    }
+
+    /* Reviews */
+    .reviews__photo {
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        overflow: hidden;
+    }
+
+    .reviews__content {
+        width: 100%;
+        padding-left: 0;
+        padding-bottom: 40px;
+    }
+}
+
+@media (max-width: 767px) {
+
+    /* Intro */
+    .intro {
+        height: auto;
+        padding-top: 130px;
+        padding-bottom: 30px;
+    }
+
+    .intro__title {
+        font-size: 30px;
+    }
+
+    .intro__subtitle {
+        margin-bottom: 30px;
+
+        font-size: 16px;
+    }
+
+    /* Works */
+    .works__item {
+        width: 100%;
+        border-bottom: 2px solid #fff;
+    }
+
+    /* Team */
+    .team {
+        margin-top: 60px;
+        margin-bottom: 30px;
+    }
+
+    /* Reviews */
+    .reviews__text {
+        font-size: 24px;
+    }
+
+    /* Footer */
+    .footer__inner{
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .footer__block {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .footer__block:last-child {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 575px) {
+
+    /* Features */
+    .features{
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    .features__item {
+        padding-left: 0;
+        padding-right: 0;        
+        width: 100%;
+    }
+
+    /* Works */
+    .works__item {
+        height: 300px;
+    }
+
+    /* Team */
+    
+    .team__item {
+        width: 100%;
+        margin-bottom: 45px;
+    }
+
+    /* Button */
+
+    .btn--long {
+        width: 260px;
+    }
+
+    /* Download */
+    .download {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .download__title {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 414px) {
+    /* Reviews */
+    .reviews__img {
+        right: -100px;
+    }
+}
